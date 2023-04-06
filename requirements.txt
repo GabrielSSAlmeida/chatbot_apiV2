@@ -1,0 +1,17 @@
+Flask
+wit
+Gunicorn
+gTTS
+flask_cors
+Flask-RESTful
+PyJWT==v1.7.1
+flask-marshmallow
+Flask-SQLAlchemy
+Werkzeug
+APScheduler
+marshmallow-sqlalchemy
+python-dateutil
+tzlocal==2.1
+flask-migrate
+SpeechRecognition
+pydub

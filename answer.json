@@ -1,0 +1,126 @@
+{
+    "localizacao_botao_volume":{
+        "tam":1,
+        "response":[
+            {
+                "value":"O botão de volume geralmente é o maior que está localizado ou no lado direito ou no lado esquerdo do celular.",
+                "type":"text"
+            },
+            {
+                "value":"https://motorola-global-portal.custhelp.com/euf/assets/images/faqs/x-images/Brasil/reboot.PNG",
+                "type":"image",
+                "description":"O botão de volume geralmente é o maior que está localizado ou no lado direito ou no lado esquerdo do celular."
+            }
+        ]
+    },
+    "localizacao_botao_power":{
+        "tam":1,
+        "response":[
+            {
+                "value":"O botão de power geralmente e o menor botão que está localizado ou no lado direito ou no lado esquerdo do celular.",
+                "type":"text"
+            },
+            {
+                "value":"https://motorola-global-portal.custhelp.com/euf/assets/images/faqs/x-images/Brasil/reboot.PNG",
+                "type":"image",
+                "description":"O botão de power geralmente e o menor botão que está localizado ou no lado direito ou no lado esquerdo do celular."
+            }
+        ]
+    },
+    "print":{
+        "tam":1,
+        "response":[
+            {
+                "value":"É preciso pressionar o botão power e volume- ou botão power e home.😀",
+                "type":"text"
+            },
+            {
+                "value":"https://www.youtube.com/watch?v=mBd8XMFexK8&ab_channel=BrunoSiqueira-SimplificandoCelular",
+                "type":"video",
+                "description":"Assista o vídeo tutorial para entender melhor.😀"
+            }
+        ]
+    },
+    "saudacoes":{
+        "tam":1,
+        "response":[
+            {
+                "value":"Olá, eu sou o Bob!",
+                "type":"text"
+            },
+            {
+                "value":"Olá, como posso te ajudar?",
+                "type":"text"
+            }
+        ]
+    },
+    "despedidas":{
+        "tam":0,
+        "response":[
+            {
+                "value":"Tchau! Até a proxima.",
+                "type":"text"
+            }
+        ]
+    },
+    "selfie":{
+        "tam":1,
+        "response":[
+            {
+                "value":"Selfie é uma foto tirada pela própria pessoa em que ela pode estar sozinha ou em grupo.",
+                "type":"text"
+            },
+            {
+                "value":"https://www.youtube.com/watch?v=ih3O7Ww50_U&ab_channel=BrunoSiqueira-SimplificandoCelular",
+                "type":"video",
+                "description":"Assista o vídeo para entender melhor."
+            }
+        ]
+    },
+    "flash":{
+        "tam":1,
+        "response":[
+            {
+                "value":"Procure o símbolo de raio no seu aplicativo de câmera. Geralmente um raio todo preenchido representa o flash ligado.",
+                "type":"text"
+            },
+            {
+                "value":"https://www.youtube.com/watch?v=W9-irb2Ycus&ab_channel=40MaisDigital",
+                "type":"video",
+                "description":"Assista o vídeo para entender melhor."
+            }
+        ]
+    },
+    "temporizador":{
+        "tam":1,
+        "response":[
+            {
+                "value":"Procure o símbolo de relógio no seu aplicativo de câmera. Ao clicar nesse ícone, escolha o tempo desejado para tirar a foto.",
+                "type":"text"
+            },
+            {
+                "value":"https://www.youtube.com/watch?v=KUDt9a_szFc&ab_channel=40MaisDigital",
+                "type":"video",
+                "description":"Assista o vídeo para entender melhor."
+            }
+        ]
+    },
+    "erro":{
+        "value":"Não foi possível entender ou não possuímos resposta para essa pergunta. Por favor, pergunte outra coisa",
+        "type":"text"
+    },
+    "teste":{
+        "tam":1,
+        "response":[
+            {
+                "value":"TESTE TESTE TESTE",
+                "type":"text"
+            },
+            {
+                "value":"https://www.youtube.com/watch?v=KUDt9a_szFc&ab_channel=40MaisDigital",
+                "type":"video",
+                "description":"Assista o vídeo para entender melhor."
+            }
+        ]
+    }
+}
