@@ -65,7 +65,7 @@ class UploadAudio(Resource):
                 
             print(text)
             
-            """ response = getIntentWit(text)
+            response = getIntentWit(text)
             
             shutil.rmtree(UsefulVariables.PATH_AUDIO_USER)
             
@@ -80,7 +80,7 @@ class UploadAudio(Resource):
 
                 return make_response(
                     jsonify(newResponse)
-                ) """
+                )
 
         except Exception as e:
             print(e)
