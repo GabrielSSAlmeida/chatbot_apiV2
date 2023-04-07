@@ -10,12 +10,12 @@ import pydub
 from useful_variables import UsefulVariables
 import speech_recognition as sr
 from pydub import AudioSegment
-import subprocess
+
 #4AF23B6X4U6WQSQ2SW6M4V2ARIAKK4JT - Chatbot
 #LV55LPSA5DDD3KRHYEU5GYXUD2AUHKIJ - Teste
 client = Wit(access_token="LV55LPSA5DDD3KRHYEU5GYXUD2AUHKIJ")
 
-subprocess.call(["conda install ffmpeg"], shell=True)
+
 
 #Inicializa todas a bibliotecas necessárias
 db = SQLAlchemy()
@@ -31,8 +31,8 @@ recognizer = sr.Recognizer()
 AudioSegment.converter = UsefulVariables.PATH_CONVERTER
 
 
-""" pydub.utils.get_encoder_name = lambda: UsefulVariables.PATH_CONVERTER
-pydub.utils.get_prober_name  = lambda: UsefulVariables.PATH_FFPROBE """
+pydub.utils.get_encoder_name = lambda: UsefulVariables.PATH_CONVERTER
+pydub.utils.get_prober_name  = lambda: UsefulVariables.PATH_FFPROBE
 
 
 #inicia o app Flask
