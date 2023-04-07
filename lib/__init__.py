@@ -6,7 +6,6 @@ from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from wit_alterado.wit_ import Wit
 from flask_migrate import Migrate
-import pydub
 from useful_variables import UsefulVariables
 import speech_recognition as sr
 from pydub import AudioSegment
@@ -28,11 +27,11 @@ migrate = Migrate(app, db)
 
 
 recognizer = sr.Recognizer()
-AudioSegment.converter = UsefulVariables.PATH_CONVERTER
+#AudioSegment.converter = UsefulVariables.PATH_CONVERTER
 
 
-pydub.utils.get_encoder_name = lambda: UsefulVariables.PATH_CONVERTER
-pydub.utils.get_prober_name  = lambda: UsefulVariables.PATH_FFPROBE
+""" pydub.utils.get_encoder_name = lambda: UsefulVariables.PATH_CONVERTER
+pydub.utils.get_prober_name  = lambda: UsefulVariables.PATH_FFPROBE """
 
 
 #inicia o app Flask
