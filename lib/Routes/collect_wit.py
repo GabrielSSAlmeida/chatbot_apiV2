@@ -18,18 +18,18 @@ class GetTextAnswer(Resource):
 
         response = getIntentWit(contentUserMessage)
         
-        match typeResponse: #Devolve uma resposta em forma de texto
-            case 'text':
-                return make_response(
-                    jsonify(response)
-                )
+        #Devolve uma resposta em forma de texto
+        if typeResponse == 'text':
+            return make_response(
+                jsonify(response)
+            )
 
-            case 'audio': #devolve uma resposta em forma de audio
-                newResponse = createResponseAudio(response)
+        if typeResponse == 'audio': #devolve uma resposta em forma de audio
+            newResponse = createResponseAudio(response)
 
-                return make_response(
-                    jsonify(newResponse)
-                )
+            return make_response(
+                jsonify(newResponse)
+            )
                 
 
 class UploadAudio(Resource):
@@ -69,18 +69,18 @@ class UploadAudio(Resource):
             
             shutil.rmtree(UsefulVariables.PATH_AUDIO_USER)
             
-            match typeResponse: #Devolve uma resposta em forma de texto
-                case 'text':
-                    return make_response(
-                        jsonify(response)
-                    )
+            #Devolve uma resposta em forma de texto
+            if typeResponse == 'text':
+                return make_response(
+                    jsonify(response)
+                )
 
-                case 'audio': #devolve uma resposta em forma de audio
-                    newResponse = createResponseAudio(response)
-                    
-                    return make_response(
-                        jsonify(newResponse)
-                    )
+            if typeResponse == 'audio': #devolve uma resposta em forma de audio
+                newResponse = createResponseAudio(response)
+
+                return make_response(
+                    jsonify(newResponse)
+                )
 
         except Exception as e:
             print(e)

@@ -8,7 +8,7 @@ class UsefulVariables:
     LANGUAGE = 'pt'
     TLD = 'com.br'
     BASENAME_DIRECTORY = caminho_projeto.absolute()
-    API_URL = "https://flask-api-chatobot.onrender.com/"
+    API_URL = "https://flask-api-chatbot.onrender.com/"
     PATH_AUDIOS = os.path.join(BASENAME_DIRECTORY, "audios")
     PATH_IMAGE = os.path.join(BASENAME_DIRECTORY, "image")
     PATH_VIDEO = os.path.join(BASENAME_DIRECTORY, "video")
