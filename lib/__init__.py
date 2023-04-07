@@ -15,7 +15,7 @@ import subprocess
 #LV55LPSA5DDD3KRHYEU5GYXUD2AUHKIJ - Teste
 client = Wit(access_token="LV55LPSA5DDD3KRHYEU5GYXUD2AUHKIJ")
 
-subprocess.call(["apt-get install ffmpeg"], shell=True)
+subprocess.call(["conda install ffmpeg"], shell=True)
 
 #Inicializa todas a bibliotecas necessárias
 db = SQLAlchemy()
