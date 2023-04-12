@@ -24,7 +24,10 @@ class GetAllUtterances(Resource):
     def get(self, numberOfUtterances):
         try:
             intentName = request.args.get('intent')
-            return client.get_utterances(limit= numberOfUtterances,intents=[intentName])
+            programId = request.args.get('programId')
+
+            intentNameWit = f"{intentName}_{programId}_"
+            return client.get_utterances(limit= numberOfUtterances,intents=[intentNameWit])
         except Exception as e:
             print(e)
             return 'Error'

@@ -76,7 +76,13 @@ class AddIntent(Resource):
 
         except Exception as e:
             print(e)
-            return 'Error'
+            response = jsonify(
+                    {
+                        "Error": str(e), 
+                    }
+                )
+            response.status_code = 400
+            return response
         
 
 
