@@ -7,7 +7,8 @@ class AddHelp(Resource):
     help_args = reqparse.RequestParser()
     help_args.add_argument("title", type=str, help="name required")
     help_args.add_argument("description", type=str, help="password required")
-    def post(self):
+    @jwt_required
+    def post(self, current_user):
         try:
             data = self.help_args.parse_args()
             title = data["title"]
