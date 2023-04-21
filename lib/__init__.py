@@ -41,6 +41,7 @@ db.init_app(app)
 from lib.models.access_db import AccessModel, access_share_schema, access_many_share_schema
 from lib.models.intent_db import IntentModel, intent_share_schema, intent_many_share_schema
 from lib.models.response_db import ResponseModel, response_share_schema, response_many_share_schema
+from lib.models.help_db import HelpModel, help_share_schema, help_many_share_schema
 
 @app.shell_context_processor
 def make_shell_context():
@@ -49,7 +50,8 @@ def make_shell_context():
         db=db,
         Access=AccessModel,
         Intent=IntentModel,
-        Response=ResponseModel
+        Response=ResponseModel,
+        Help=HelpModel
     )
 
 #Cria a database

@@ -4,7 +4,7 @@ from lib.Routes.collect_wit import GetTextAnswer, AudioDownload, ImageDownload, 
 from lib.Routes.access_key import AccessLogin, AccessRegister, DeleteAccess
 from lib.Routes.train_wit import AddIntent, DeleteIntent, EditResponses, TrainBot, DeleteUtterance, FileEditResponse
 from lib.Routes.get_infos import GetAllIntents, GetAllUtterances, GetResponsesIntent, GetIntentsbyProgram
-
+from lib.Routes.help_functions import GetAllHelps, AddHelp, DeleteHelps
 
 
 api.add_resource(GetTextAnswer, "/<string:typeResponse>")
@@ -34,6 +34,9 @@ api.add_resource(GetIntentsbyProgram, "/get_intents_program")
 
 
 
+api.add_resource(GetAllHelps, "/get_help")
+api.add_resource(AddHelp, "/add_help")
+api.add_resource(DeleteHelps, "/delete_help")
 
 
 

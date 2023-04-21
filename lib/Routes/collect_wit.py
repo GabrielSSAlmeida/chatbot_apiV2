@@ -10,7 +10,7 @@ from lib.models.response_db import ResponseModel, response_many_share_schema
 from apscheduler.schedulers.background import BackgroundScheduler
 from lib.cron_task import CronTask
 
-#teste
+
 
 class GetTextAnswer(Resource):
     def get(self, typeResponse):
