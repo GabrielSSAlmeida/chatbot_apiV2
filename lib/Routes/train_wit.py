@@ -83,7 +83,6 @@ class AddIntent(Resource):
                 )
             response.status_code = 400
             return response
-        
 
 
 #deleta intent no wit e no banco de dados

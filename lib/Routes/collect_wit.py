@@ -17,7 +17,7 @@ class GetTextAnswer(Resource):
         contentUserMessage = request.args.get('message')
 
         response = getIntentWit(contentUserMessage)
-        
+
         #Devolve uma resposta em forma de texto
         if typeResponse == 'text':
             return make_response(
@@ -127,10 +127,12 @@ def getIntentWit(message):
     intent = data_message.get("intents")[0].get("name")
     intent_confidence = data_message.get("intents")[0].get("confidence")
     
+
     intentNameWit = intent.split('_')
     
     intentName = intentNameWit[0]
     programId = intentNameWit[1]
+
 
     if(intent_confidence > 0.6):
         search_intent = IntentModel.find_by_name_program(name=intentName, program=programId)
