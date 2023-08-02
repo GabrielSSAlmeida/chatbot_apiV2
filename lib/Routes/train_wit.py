@@ -51,7 +51,7 @@ class AddIntent(Resource):
                 value= ""
                 for response in responseArray:
                     learn_more  = ""
-                    if response['learnMore']: 
+                    if 'learnMore' in response: 
                         learn_more = response['learnMore']
                     if response['type'] == "text":
                         type = response['type']
@@ -106,6 +106,7 @@ class DeleteIntent(Resource):
                 delete_intent = IntentModel.find_by_name_program(name=intentName, program=program)
                 if delete_intent:
                     intentId = delete_intent.id
+                    delete_intent.delete_from_db()
 
                     delete_response = ResponseModel.find_by_intent_id(intent_id=intentId)
                     if delete_response:
@@ -120,7 +121,7 @@ class DeleteIntent(Resource):
                     response = jsonify({"erro": "Erro ao apagar Intent no db"})
                     response.status_code = 400
                     return response
-                delete_intent.delete_from_db()
+                
 
 
                 return witResponse
@@ -160,7 +161,8 @@ class EditResponses(Resource):
                             value= ""
                             for response in responseArray:
                                 learn_more = ""
-                                if response['learnMore']: 
+                                if 'learnMore' in response:
+                                    print("asdasdasdasd")
                                     learn_more = response['learnMore']
                                 if response['type'] == "text":
                                     type = response['type']
