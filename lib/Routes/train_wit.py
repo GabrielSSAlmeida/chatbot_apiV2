@@ -162,7 +162,6 @@ class EditResponses(Resource):
                             for response in responseArray:
                                 learn_more = ""
                                 if 'learnMore' in response:
-                                    print("asdasdasdasd")
                                     learn_more = response['learnMore']
                                 if response['type'] == "text":
                                     type = response['type']
