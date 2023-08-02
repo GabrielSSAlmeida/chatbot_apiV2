@@ -50,17 +50,20 @@ class AddIntent(Resource):
                 type = ""
                 value= ""
                 for response in responseArray:
+                    learn_more  = ""
+                    if response['learnMore']: 
+                        learn_more = response['learnMore']
                     if response['type'] == "text":
                         type = response['type']
                         value = response['value']
                         
-                        new_response = ResponseModel(type=type, value=value, intent_id=witResponse['id'])
+                        new_response = ResponseModel(type=type, value=value, intent_id=witResponse['id'], learn_more= learn_more)
                         new_response.save_to_db()
                     else:
                         type = response['type']
                         description = response['description']
                         value = response['value']
-                        new_response = ResponseModel(type=type, value=value, description=description, intent_id=witResponse['id'])
+                        new_response = ResponseModel(type=type, value=value, description=description, intent_id=witResponse['id'], learn_more=learn_more)
                         new_response.save_to_db()
 
 
@@ -156,17 +159,20 @@ class EditResponses(Resource):
                             type = ""
                             value= ""
                             for response in responseArray:
+                                learn_more = ""
+                                if response['learnMore']: 
+                                    learn_more = response['learnMore']
                                 if response['type'] == "text":
                                     type = response['type']
                                     value = response['value']
                                     
-                                    new_response = ResponseModel(type=type, value=value, intent_id=intentId)
+                                    new_response = ResponseModel(type=type, value=value, intent_id=intentId, learn_more=learn_more)
                                     new_response.save_to_db()
                                 else:
                                     type = response['type']
                                     description = response['description']
                                     value = response['value']
-                                    new_response = ResponseModel(type=type, value=value, description=description, intent_id=intentId)
+                                    new_response = ResponseModel(type=type, value=value, description=description, intent_id=intentId, learn_more=learn_more)
                                     new_response.save_to_db()
                     else:
                         response = jsonify({"erro": "Não existe respostas para essa Intent"})
