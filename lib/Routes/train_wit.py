@@ -50,17 +50,20 @@ class AddIntent(Resource):
                 type = ""
                 value= ""
                 for response in responseArray:
+                    learn_more  = ""
+                    if 'learnMore' in response: 
+                        learn_more = response['learnMore']
                     if response['type'] == "text":
                         type = response['type']
                         value = response['value']
                         
-                        new_response = ResponseModel(type=type, value=value, intent_id=witResponse['id'])
+                        new_response = ResponseModel(type=type, value=value, intent_id=witResponse['id'], learn_more= learn_more)
                         new_response.save_to_db()
                     else:
                         type = response['type']
                         description = response['description']
                         value = response['value']
-                        new_response = ResponseModel(type=type, value=value, description=description, intent_id=witResponse['id'])
+                        new_response = ResponseModel(type=type, value=value, description=description, intent_id=witResponse['id'], learn_more=learn_more)
                         new_response.save_to_db()
 
 
@@ -103,6 +106,7 @@ class DeleteIntent(Resource):
                 delete_intent = IntentModel.find_by_name_program(name=intentName, program=program)
                 if delete_intent:
                     intentId = delete_intent.id
+                    delete_intent.delete_from_db()
 
                     delete_response = ResponseModel.find_by_intent_id(intent_id=intentId)
                     if delete_response:
@@ -117,7 +121,7 @@ class DeleteIntent(Resource):
                     response = jsonify({"erro": "Erro ao apagar Intent no db"})
                     response.status_code = 400
                     return response
-                delete_intent.delete_from_db()
+                
 
 
                 return witResponse
@@ -156,17 +160,21 @@ class EditResponses(Resource):
                             type = ""
                             value= ""
                             for response in responseArray:
+                                learn_more = ""
+                                if 'learnMore' in response:
+                                    print("asdasdasdasd")
+                                    learn_more = response['learnMore']
                                 if response['type'] == "text":
                                     type = response['type']
                                     value = response['value']
                                     
-                                    new_response = ResponseModel(type=type, value=value, intent_id=intentId)
+                                    new_response = ResponseModel(type=type, value=value, intent_id=intentId, learn_more=learn_more)
                                     new_response.save_to_db()
                                 else:
                                     type = response['type']
                                     description = response['description']
                                     value = response['value']
-                                    new_response = ResponseModel(type=type, value=value, description=description, intent_id=intentId)
+                                    new_response = ResponseModel(type=type, value=value, description=description, intent_id=intentId, learn_more=learn_more)
                                     new_response.save_to_db()
                     else:
                         response = jsonify({"erro": "Não existe respostas para essa Intent"})

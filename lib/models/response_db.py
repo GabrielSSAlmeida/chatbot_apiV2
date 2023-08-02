@@ -9,13 +9,15 @@ class ResponseModel(db.Model):
     type = db.Column(db.String(20))
     value = db.Column(db.String(200))
     description = db.Column(db.String(200))
+    learn_more = db.Column(db.String(200))
     intent_id = db.Column(db.Integer, db.ForeignKey('intent.id'))
 
-    def __init__(self, type,  value,  intent_id, description = ""):
+    def __init__(self, type,  value,  intent_id, description = "", learn_more= ""):
         self.type = type
         self.value = value
         self.description = description
         self.intent_id = intent_id
+        self.learn_more = learn_more
 
     
     def __repr__(self):
@@ -35,7 +37,7 @@ class ResponseModel(db.Model):
 
 class ResponseSchema(ma.Schema):
     class Meta:
-        fields= ('id', 'type', 'value', 'description', 'intent')
+        fields= ('id', 'type', 'value', 'description', 'intent', 'learn_more')
 
 response_share_schema = ResponseSchema()
 response_many_share_schema = ResponseSchema(many=True)

@@ -37,6 +37,7 @@ pydub.utils.get_prober_name  = lambda: UsefulVariables.PATH_FFPROBE """
 
 #inicia o app Flask
 db.init_app(app)
+migrate.init_app(app, db)
 
 #importação das tabelas do banco de dados
 from lib.models.access_db import AccessModel, access_share_schema, access_many_share_schema

@@ -18,7 +18,8 @@ api.add_resource(AccessRegister, "/register")
 api.add_resource(AccessLogin, "/login")
 api.add_resource(DeleteAccess, "/delete_access")
 
-
+#ADD RESPOSTAS SEM ADD INTENT
+#EDITAR RESPOSTAS INDIVIDUALMENTE
 api.add_resource(AddIntent, "/intent")
 api.add_resource(DeleteIntent, "/delete/<string:intentName>/<string:program>")
 api.add_resource(EditResponses, "/edit")
@@ -41,4 +42,4 @@ api.add_resource(DeleteHelps, "/delete_help")
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host='0.0.0.0')
